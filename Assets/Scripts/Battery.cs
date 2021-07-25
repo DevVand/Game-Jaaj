@@ -9,6 +9,7 @@ public class Battery : MonoBehaviour
     public float maxCharge = 100;
     public float drainAmount = 10;
     public float chargeAmount = 1;
+    public float drainRate = 2;
 
     [SerializeField] Slider slider;
     [SerializeField] Image img;
@@ -21,7 +22,7 @@ public class Battery : MonoBehaviour
         actualCharge = maxCharge;
         slider.maxValue = maxCharge;
         slider.value = maxCharge;
-        Invoke(nameof(drain),2);
+        Invoke(nameof(drain), drainRate);
     }
 
 
@@ -33,7 +34,7 @@ public class Battery : MonoBehaviour
     }
     public void drain() {
         actualCharge = Mathf.Max(actualCharge - drainAmount,0);
-        Invoke(nameof(drain), 2);
+        Invoke(nameof(drain), drainRate);
     }
     public void charge()
     {
