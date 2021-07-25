@@ -8,8 +8,11 @@ public class Battery : MonoBehaviour
     public float actualCharge = 100;
     public float maxCharge = 100;
     public float drainAmount = 10;
-    public float chargeAmount = 1;
+    public float chargeAmount = 5;
     public float drainRate = 2;
+    public float chargeRate = .5f;
+
+    public bool charging = false;
 
     [SerializeField] Slider slider;
     [SerializeField] Image img;
@@ -33,12 +36,19 @@ public class Battery : MonoBehaviour
         img.color = Color.Lerp(img.color, getColor(actualCharge), 3 * Time.deltaTime);
     }
     public void drain() {
-        actualCharge = Mathf.Max(actualCharge - drainAmount,0);
-        Invoke(nameof(drain), drainRate);
+        if (!charging)
+        {
+            actualCharge = Mathf.Max(actualCharge - drainAmount, 0);
+            Invoke(nameof(drain), drainRate);
+        }
     }
     public void charge()
     {
-        actualCharge = Mathf.Min(actualCharge+chargeAmount,maxCharge);
+        if (charging)
+        {
+            actualCharge = Mathf.Min(actualCharge + chargeAmount, maxCharge);
+            Invoke(nameof(charge), chargeRate);
+        }
     }
     public Color getColor(float amount) {
         Color color;
