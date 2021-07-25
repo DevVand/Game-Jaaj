@@ -4,12 +4,18 @@ using System.Collections;
 public class playerMovement : MonoBehaviour
 {
 
-    public float speed = 300;
+    public float speed = 45;
     public float turnSpeed = 2f;
+    public float damp = .9f;
 
-    public float angle = 0;
+    public bool dashUnlocked = true;
+    public float dashSpeed = 80;
+    public float dashWait = 1;
+    private bool canDash = true;
 
+    [Header("misc")]
     public LayerMask whatIsSolid;
+    public float angle = 0;
 
     private SpriteRenderer sprRenderer;
     private Rigidbody2D rdbd;
@@ -22,30 +28,45 @@ public class playerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void FixedUpdate()
     {
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
         angle += (h * -turnSpeed);
 
-        Vector2 direction = new Vector2(
-            ((Mathf.Cos(angle * Mathf.Deg2Rad) * speed) * v),
-            ((Mathf.Sin(angle * Mathf.Deg2Rad) * speed) * v));
+        Vector2 direction = Vector2.zero;
+        if (Input.GetButtonDown("Dash") && canDash)
+        {
+            if (dashUnlocked)
+            {
+                direction = new Vector2(
+                    ((Mathf.Cos(angle * Mathf.Deg2Rad) * dashSpeed)),
+                    ((Mathf.Sin(angle * Mathf.Deg2Rad) * dashSpeed)));
+                canDash = false;
+                Invoke(nameof(nowCanDash), dashWait);
+            }
+            else {
+                anim.Play("alert", 1);
+            }
+        }
+        else {
+            direction = new Vector2(
+                ((Mathf.Cos(angle * Mathf.Deg2Rad) * speed) * v),
+                ((Mathf.Sin(angle * Mathf.Deg2Rad) * speed) * v));
+        }
+        
+
         rdbd.velocity += direction*Time.deltaTime;
-        rdbd.velocity *= .8f;
+        //rdbd.velocity *= damp;
 
         anim.SetFloat("angle",Mathf.Repeat(-angle+90,360));
         //anim.SetFloat("velocityY", rdbd.velocity.y);
         //anim.SetBool("ground", onGround);
         //anim.SetBool("crouching", crouching);
-
     }
+
+    public void nowCanDash() { canDash = true; }
 
 }
