@@ -9,10 +9,13 @@ public class BatteryCharge : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player") {
-            collision.gameObject.transform.position = Vector3.Lerp(
+            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                collision.gameObject.transform.position = Vector3.Lerp(
                 collision.gameObject.transform.position, transform.position,
                 smooth * Time.deltaTime); ;
-            collision.gameObject.GetComponent<Battery>().charge();
+                collision.gameObject.GetComponent<Battery>().charge();
+            }
         }
     }
 }
