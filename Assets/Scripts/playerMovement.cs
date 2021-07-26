@@ -13,7 +13,7 @@ public class playerMovement : MonoBehaviour
     public float dashSpeed = 80;
     public float dashWait = 2;
     public float dashStopWait = .5f;
-    private bool dashing = false;
+    public bool dashing = false;
     private bool canDash = true;
 
     [Header("misc")]
