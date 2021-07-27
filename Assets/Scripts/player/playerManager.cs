@@ -9,6 +9,7 @@ public class playerManager : MonoBehaviour
     private Animator anim;
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         player = GameObject.FindGameObjectWithTag("Player");
         anim = player.GetComponent<Animator>();
     }
