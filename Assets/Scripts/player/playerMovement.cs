@@ -39,7 +39,7 @@ public class playerMovement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        angle += (h * -turnSpeed);
+        angle += (h * -turnSpeed)*(v<0? -1:1);
 
         Vector2 direction = Vector2.zero;
         if (Input.GetButtonDown("Dash"))
