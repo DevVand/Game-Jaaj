@@ -2003,11 +2003,13 @@ MonoBehaviour:
   btText2: {fileID: 3836305293480788066}
   button3: {fileID: 3836305292587224153}
   btText3: {fileID: 3836305292737661850}
-  moreSpeedAmount: 12
+  moreSpeedAmount: 10
   moreTurnSpeedAmount: 1.6
-  addSucker: 7
-  moreSpeed: 5
-  moreTurnSpeed: 3
+  moreBatteryAmount: 35
+  moreStunResistanceAmount: 0.4
+  moreChargeSpeed: 25
+  moreSuctionRadius: 1.6
+  moreSuctionForce: 0.8
 --- !u!1 &3836305293462320601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,7 +2765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83c24be1d0f7784e8a47d341c073e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
+  timeRemaining: 30
   timerIsRunning: 0
   timeText: {fileID: 3836305294052867542}
 --- !u!95 &3836305293730029439

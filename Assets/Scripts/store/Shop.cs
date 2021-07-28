@@ -24,10 +24,12 @@ public class Shop : MonoBehaviour
     [Header("store config")]
     public float moreSpeedAmount = 15;
     public float moreTurnSpeedAmount = 1.5f;
-    [Header("store prices")]
-    public int addSucker = 7;
-    public int moreSpeed = 5;
-    public int moreTurnSpeed = 3;
+    public int moreBatteryAmount = 15;
+    public float moreStunResistanceAmount = .5f;
+    public float moreChargeSpeed = .3f;
+    public float moreSuctionRadius = 1.4f;
+    public float moreSuctionForce = .4f;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -39,32 +41,101 @@ public class Shop : MonoBehaviour
     }
 
     // STORE ---------------------------------------------------------------------
-    public void buyAddSucker(){
-        if (wallet.sub(addSucker)){
-            button2.interactable = false;
-            btText2.color = nonInteractiveColor;
-            player.transform.Find("Sucker").gameObject.SetActive(true);
+    public void buyAddSucker(int price)
+    {
+        if (wallet.sub(price)){
+            disableBT2();
+            player.transform.Find("Sucker").localScale = new Vector3(1,1,1);
             updateMoneyTXT();
         }
     }
-    public void buyMoreSpeed()
+    public void buyAddDash(int price)
     {
-        if (wallet.sub(moreSpeed))
+        if (wallet.sub(price))
         {
-            button1.interactable = false;
-            btText1.color = nonInteractiveColor;
+            disableBT2();
+            player.GetComponent<playerMovement>().dashUnlocked = true; ;
+            updateMoneyTXT();
+        }
+    }
+    public void buyMoreSpeed(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT1();
             player.GetComponent<playerMovement>().speed += moreSpeedAmount;
             updateMoneyTXT();
         }
     }
-    public void buyMoreTurnSpeed()
+    public void buyMoreTurnSpeed(int price)
     {
-        if (wallet.sub(moreTurnSpeed))
+        if (wallet.sub(price))
         {
-            button3.interactable = false;
-            btText3.color = nonInteractiveColor;
+            disableBT3();
             player.GetComponent<playerMovement>().turnSpeed += moreTurnSpeedAmount;
             updateMoneyTXT();
         }
+    }
+    public void buyMoreStunResistance(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT1();
+            player.GetComponent<PlayerCollider>().recoveryRate -= moreStunResistanceAmount;
+            updateMoneyTXT();
+        }
+    }
+    public void buyMoreBattery(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT3();
+            player.GetComponent<Battery>().addMmaxCharge(moreBatteryAmount);
+            updateMoneyTXT();
+        }
+    }
+    public void buyMoreChargeSpeed(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT3();
+            player.GetComponent<Battery>().chargeAmount += moreChargeSpeed;
+            updateMoneyTXT();
+        }
+    }
+    public void buyMoreSuctionForce(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT2();
+            player.transform.Find("Sucker").GetComponent<Sucker>().speed += moreSuctionForce;
+            updateMoneyTXT();
+        }
+    }
+    public void buyMoreSuctionRadius(int price)
+    {
+        if (wallet.sub(price))
+        {
+            disableBT2();
+            Transform sucker = player.transform.Find("Sucker");
+            sucker.localScale = new Vector3(sucker.localScale.x * moreSuctionRadius, sucker.localScale.y * moreSuctionRadius, 1); ;
+            updateMoneyTXT();
+        }
+    }
+
+    void disableBT1()
+    {
+        button1.interactable = false;
+        btText1.color = nonInteractiveColor;
+    }
+    void disableBT2()
+    {
+        button2.interactable = false;
+        btText2.color = nonInteractiveColor;
+    }
+    void disableBT3()
+    {
+        button3.interactable = false;
+        btText3.color = nonInteractiveColor;
     }
 }

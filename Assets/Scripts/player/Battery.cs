@@ -64,6 +64,10 @@ public class Battery : MonoBehaviour
             Invoke(nameof(charge), chargeRate);
         }
     }
+    public void addMmaxCharge(int amount) {
+        maxCharge += amount;
+        slider.maxValue = maxCharge;
+    }
     public Color getColor(float amount) {
         Color color;
         if (amount > 75)
