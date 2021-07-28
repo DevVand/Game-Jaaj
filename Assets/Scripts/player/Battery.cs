@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Battery : MonoBehaviour
 {
+    private playerMovement player;
+
     public float actualCharge = 100;
     public float maxCharge = 100;
     public float drainAmount = 10;
@@ -14,6 +16,8 @@ public class Battery : MonoBehaviour
 
     public bool charging = false;
 
+
+    [SerializeField] Animator batteryAnim;
     [SerializeField] Slider slider;
     [SerializeField] Image img;
     public Color green;
@@ -22,6 +26,7 @@ public class Battery : MonoBehaviour
 
     void Start()
     {
+        player = GetComponent<playerMovement>();
         actualCharge = maxCharge;
         slider.maxValue = maxCharge;
         slider.value = maxCharge;
@@ -31,8 +36,17 @@ public class Battery : MonoBehaviour
 
     void Update()
     {
-        slider.value = Mathf.Lerp(slider.value, actualCharge,4*Time.deltaTime);
+        if (actualCharge <= 0)
+        {
+            batteryAnim.Play("alert");
+            player.slowMode = true;
+        }
+        else {
+            batteryAnim.Play("idle");
+            player.slowMode = false;
+        }
 
+        slider.value = Mathf.Lerp(slider.value, actualCharge,4*Time.deltaTime);
         img.color = Color.Lerp(img.color, getColor(actualCharge), 3 * Time.deltaTime);
     }
     public void drain() {

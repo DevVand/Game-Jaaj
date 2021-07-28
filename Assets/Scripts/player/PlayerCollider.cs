@@ -6,7 +6,7 @@ public class PlayerCollider : MonoBehaviour
 {
     private playerManager player;
     private Animator anim;
-    public float timer = 1;
+    public float recoveryRate = 1;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -16,6 +16,6 @@ public class PlayerCollider : MonoBehaviour
     {
         anim.Play("alert", 1);
         player.disablePlayerMovement();
-        player.Invoke(nameof(player.enablePlayerMovement), timer);
+        player.Invoke(nameof(player.enablePlayerMovement), recoveryRate);
     }
 }

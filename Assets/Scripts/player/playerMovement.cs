@@ -4,9 +4,12 @@ using System.Collections;
 public class playerMovement : MonoBehaviour
 {
 
+    public float speedSlowMode = 30*.2f;
     public float speed = 45;
     public float turnSpeed = 2f;
     public float damp = .9f;
+
+    public bool slowMode = false;
 
     [Header("dash")]
     public bool dashUnlocked = true;
@@ -41,7 +44,7 @@ public class playerMovement : MonoBehaviour
         Vector2 direction = Vector2.zero;
         if (Input.GetButtonDown("Dash"))
         {
-            if (dashUnlocked && canDash)
+            if (dashUnlocked && canDash && !slowMode)
             {
                 dashing = true;
                 canDash = false;
@@ -54,18 +57,26 @@ public class playerMovement : MonoBehaviour
                 anim.Play("alert", 1);
             }
         }
+        if (!slowMode)
+        {
+            if (dashing)
+            {
+                direction = new Vector2(
+                    ((Mathf.Cos(angle * Mathf.Deg2Rad) * dashSpeed)),
+                    ((Mathf.Sin(angle * Mathf.Deg2Rad) * dashSpeed)));
+            }
+            else
+            {
+                direction = new Vector2(
+                    ((Mathf.Cos(angle * Mathf.Deg2Rad) * speed) * v),
+                    ((Mathf.Sin(angle * Mathf.Deg2Rad) * speed) * v));
+            }
 
-        if (dashing)
-        {
-            direction = new Vector2(
-                ((Mathf.Cos(angle * Mathf.Deg2Rad) * dashSpeed)),
-                ((Mathf.Sin(angle * Mathf.Deg2Rad) * dashSpeed)));
         }
-        else
-        {
+        else {
             direction = new Vector2(
-                ((Mathf.Cos(angle * Mathf.Deg2Rad) * speed) * v),
-                ((Mathf.Sin(angle * Mathf.Deg2Rad) * speed) * v));
+                 ((Mathf.Cos(angle * Mathf.Deg2Rad) * speedSlowMode) * v),
+                 ((Mathf.Sin(angle * Mathf.Deg2Rad) * speedSlowMode) * v));
         }
 
 

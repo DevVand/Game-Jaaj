@@ -5,7 +5,19 @@ using UnityEngine;
 public class BatteryCharge : MonoBehaviour
 {
     public float smooth = 4;
+    public bool spawnHere = false;
 
+    private void Start()
+    {
+        if (spawnHere) {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in players)
+            {
+                player.transform.position = transform.position;
+            } 
+            
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

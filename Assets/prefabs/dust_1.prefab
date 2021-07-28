@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 743552667722871304}
   - component: {fileID: 3098275861612354233}
   m_Layer: 0
-  m_Name: dust
+  m_Name: dust_1
   m_TagString: Dust
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 743552667722871310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.53999996, y: -0.96, z: 1.8581641}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cb7a8f46cd618cc4fa5c35c0466aec90, type: 3}
-  m_Color: {r: 1, g: 0.45313016, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class playerManager : MonoBehaviour
 {
-
+    public bool original = false;
     private GameObject player;
-    private Animator anim;
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this);
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        {
+            if (!original)
+            {
+                DestroyImmediate(this.gameObject, true); ;
+            }
+        }
         player = GameObject.FindGameObjectWithTag("Player");
-        anim = player.GetComponent<Animator>();
+        original = true;
     }
 
     public void disablePlayerMovement()
     {
         player.GetComponent<playerMovement>().enabled = false;
-        //player.GetComponent<lightManager>().enabled = false;
-        //player.GetComponent<Rigidbody2D>().isKinematic = true;
 
     }
     public void enablePlayerMovement()
     {
         playerMovement playerMovement = player.GetComponent<playerMovement>();
         playerMovement.enabled = true;
-        //player.GetComponent<Rigidbody2D>().isKinematic = false;
     }
     public void invisible()
     {
