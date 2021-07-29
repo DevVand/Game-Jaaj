@@ -22,18 +22,14 @@ public class BatteryCharge : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Battery battery = collision.gameObject.GetComponent<Battery>();
-            battery.charging = true; 
-            battery.charge();
+            collision.gameObject.GetComponent<Battery>().startCharging();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
         {
         if (collision.gameObject.tag == "Player")
         {
-            Battery battery = collision.gameObject.GetComponent<Battery>();
-            battery.charging = false; 
-            battery.Invoke(nameof(battery.drain), battery.drainRate);
+            collision.gameObject.GetComponent<Battery>().stopCharging();
             
         }
     }

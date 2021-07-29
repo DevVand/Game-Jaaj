@@ -84,34 +84,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    /*
-    public void getGrade() {
-
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Dust");
-        int dirtLeft = 0;
-        foreach (GameObject obj in objects)
-        {
-            dirtLeft++;
-        }
-        int dirtDone = dirts - dirtLeft;
-        float percentage = dirtDone * 100 / dirts;
-
-        Wallet wallet = player.GetComponent<Wallet>();
-        if (percentage > 90) {
-            endText.text = grades.gradeA();
-            coinsText.text = "+15$";
-            wallet.add(15);
-        }else if (percentage > 40){
-            endText.text = grades.gradeB();
-            coinsText.text = "+10$";
-            wallet.add(10);
-        }else{
-            endText.text = grades.gradeC();
-            coinsText.text = "+5$";
-            wallet.add(5);
-        }
-
-    }*/
     public void getRandomGrade()
     {
         endText.text = grades.gradeRandom();

@@ -14,7 +14,8 @@ public class Battery : MonoBehaviour
     public float drainRate = 2;
     public float chargeRate = .5f;
 
-    public bool charging = false;
+    private bool wasCharging = true;
+    public bool charging = true;
 
 
     [SerializeField] Animator batteryAnim;
@@ -30,7 +31,7 @@ public class Battery : MonoBehaviour
         actualCharge = maxCharge;
         slider.maxValue = maxCharge;
         slider.value = maxCharge;
-        Invoke(nameof(drain), drainRate);
+        //Invoke(nameof(drain), drainRate);
     }
 
 
@@ -49,6 +50,27 @@ public class Battery : MonoBehaviour
         slider.value = Mathf.Lerp(slider.value, actualCharge,4*Time.deltaTime);
         img.color = Color.Lerp(img.color, getColor(actualCharge), 3 * Time.deltaTime);
     }
+
+
+
+    public void startCharging()
+    {
+        CancelInvoke(nameof(drain));
+        CancelInvoke(nameof(charge));
+
+        charging = true;
+        charge();
+    }
+
+    public void stopCharging()
+    {
+        CancelInvoke(nameof(drain));
+        CancelInvoke(nameof(charge));
+
+        charging = false;
+        Invoke(nameof(drain), drainRate);
+    }
+
     public void drain() {
         if (!charging)
         {
