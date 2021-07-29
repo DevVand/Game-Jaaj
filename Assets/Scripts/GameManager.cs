@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         player.transform.Find("Cleaner").gameObject.GetComponent<Cleaner>().start();
         player.GetComponent<playerMovement>().enabled = true;
         player.GetComponent<playerManager>().enableCollider();
+        player.GetComponent<Battery>().actualCharge = player.GetComponent<Battery>().maxCharge;
 
         grades = GetComponent<Grades>();
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Dust");
@@ -127,8 +128,7 @@ public class GameManager : MonoBehaviour
             endGame();
         }
     }
-    public void endGame()
-    {
+    public void endGame()    {
         timer.timerIsRunning = false;
         animFade.SetBool("fade", false);
         Invoke(nameof(startEndAnimation), 1.3f);
