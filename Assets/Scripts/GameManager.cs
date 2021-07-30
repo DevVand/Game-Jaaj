@@ -22,11 +22,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] Slider percentageSlider;
 
+    public bool tutorial = false;
+
     public int min = 60;
     public int med = 80;
     public int max = 90;
 
-    public int dirts = 0;
+    public float dirts = 0;
     float percentageOfOne = 0;
     float percentage = 0;
     Grades grades;
@@ -63,24 +65,31 @@ public class GameManager : MonoBehaviour
 
     public void getGrade()
     {
-        Wallet wallet = player.GetComponent<Wallet>();
-        if (percentage > max)
+        if (!tutorial)
         {
-            endText.text = grades.gradeA();
-            coinsText.text = "+15$";
-            wallet.add(15);
+            Wallet wallet = player.GetComponent<Wallet>();
+            if (percentage > max)
+            {
+                endText.text = grades.gradeA();
+                coinsText.text = "+15$";
+                wallet.add(15);
+            }
+            else if (percentage > med)
+            {
+                endText.text = grades.gradeB();
+                coinsText.text = "+10$";
+                wallet.add(10);
+            }
+            else if (percentage > min)
+            {
+                endText.text = grades.gradeC();
+                coinsText.text = "+5$";
+                wallet.add(5);
+            }
         }
-        else if (percentage > med)
-        {
-            endText.text = grades.gradeB();
-            coinsText.text = "+10$";
-            wallet.add(10);
-        }
-        else if (percentage > min)
-        {
-            endText.text = grades.gradeC();
-            coinsText.text = "+5$";
-            wallet.add(5);
+        else {
+            endText.text = grades.gradeRandom();
+            coinsText.text = "+0$";
         }
 
     }

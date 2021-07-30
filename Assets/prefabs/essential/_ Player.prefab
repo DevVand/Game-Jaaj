@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualCharge: 100
   maxCharge: 100
-  drainAmount: 9.5
+  drainAmount: 10
   chargeAmount: 30
   drainRate: 1
   chargeRate: 1

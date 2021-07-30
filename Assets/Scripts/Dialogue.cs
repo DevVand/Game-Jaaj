@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.Play("scene" + scene);
+        Invoke(nameof(playScene), .5f);
     }
     public void DialogueAdvance()
     {
@@ -23,14 +23,20 @@ public class Dialogue : MonoBehaviour
         {
             animFade.SetBool("fade", false);
             Invoke(nameof(loadScene), 1.5f);
+            return;
         }
-        anim.Play("fadeout" + actualDialogue, 1);
+        if(actualDialogue>0)
+            anim.Play("fadeout" + actualDialogue, 1);
         actualDialogue += 1;
 
         anim.Play("panel" + actualDialogue, 0);
     }
     public void DialogueTXTUpdate() {
         anim.Play("fadein" + (actualDialogue), 1);
+    }
+    public void playScene()
+    {
+        anim.Play("scene" + scene);
     }
     public void loadScene() {
         SceneManager.LoadScene(nextScene);

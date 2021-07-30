@@ -584,6 +584,7 @@ MonoBehaviour:
   endText: {fileID: 1795439240}
   coinsText: {fileID: 102648151}
   percentageSlider: {fileID: 1022816152}
+  tutorial: 0
   min: 50
   med: 75
   max: 90
@@ -1532,12 +1533,12 @@ PrefabInstance:
     - target: {fileID: 3836305292587224153, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3836305292737661850, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_text
-      value: 2$
+      value: 7$
       objectReference: {fileID: 0}
     - target: {fileID: 3836305293040038081, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
@@ -1652,7 +1653,7 @@ PrefabInstance:
     - target: {fileID: 3836305293116467233, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3836305293116467233, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
@@ -1757,7 +1758,7 @@ PrefabInstance:
     - target: {fileID: 3836305293480788066, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_text
-      value: 6$
+      value: 7$
       objectReference: {fileID: 0}
     - target: {fileID: 3836305293616156128, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
@@ -1777,7 +1778,7 @@ PrefabInstance:
     - target: {fileID: 3836305293752565798, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_text
-      value: 6$
+      value: 8$
       objectReference: {fileID: 0}
     - target: {fileID: 3836305293763798038, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
@@ -1947,7 +1948,7 @@ PrefabInstance:
     - target: {fileID: 3836305294382466395, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3836305294420294800, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
