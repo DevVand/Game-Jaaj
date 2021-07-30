@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e2f94181f9574fa423abacf7b0a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedSlowMode: 6
+  speedSlowMode: 9
   speed: 30
   turnSpeed: 2.5
   damp: 0.9
@@ -1193,9 +1193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualCharge: 100
   maxCharge: 100
-  drainAmount: 20
+  drainAmount: 9.5
   chargeAmount: 30
-  drainRate: 2
+  drainRate: 1
   chargeRate: 1
   charging: 0
   batteryAnim: {fileID: 2533416322034538297}
