@@ -43,7 +43,11 @@ public class Shop : MonoBehaviour
     // STORE ---------------------------------------------------------------------
     public void buyNothing(int price)
     {
-        disableBT2();
+        if (wallet.sub(price))
+        {
+            disableBT2();
+            updateMoneyTXT();
+        }
     }
     public void buyAddSucker(int price)
     {

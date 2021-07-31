@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        Invoke(nameof(playScene), .5f);
+        //Invoke(nameof(playScene), .5f);
     }
     public void DialogueAdvance()
     {

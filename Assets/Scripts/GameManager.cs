@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    private GameObject player;
+    playRandomSound rndSound;
+    GameObject player;
 
     public string nextScene;
 
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        rndSound = GetComponent<playRandomSound>();
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.Find("Cleaner").gameObject.GetComponent<Cleaner>().start();
         player.GetComponent<playerMovement>().enabled = true;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
             dirts++;
         }
         percentageOfOne = 1 * 100 / dirts;
-
+        player.GetComponent<playerSound>().soundOn();
     }
 
     private void Update()
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
     }
     public void dirtCleaned()
     {
+        rndSound.playRandom();
         percentage += percentageOfOne;
         if (percentage >= 98) {
             endGame();
@@ -97,7 +99,9 @@ public class GameManager : MonoBehaviour
     {
         endText.text = grades.gradeRandom();
     }
-    public void timerEnded() {
+    public void timerEnded()
+    {
+        player.GetComponent<playerSound>().soundOff();
         playerManager manager = player.GetComponent<playerManager>();
         manager.disablePlayerMovement();
         manager.disableCollider();
@@ -109,7 +113,10 @@ public class GameManager : MonoBehaviour
             endGame();
         }
     }
-    public void endGame()    {
+    public void endGame()
+    {
+        player.GetComponent<playerSound>().soundOff();
+        timer.checkInput = false;
         timer.timerIsRunning = false;
         animFade.SetBool("fade", false);
         Invoke(nameof(startEndAnimation), 1.3f);

@@ -449,6 +449,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2322670013923284463, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4767316810096327544, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
       propertyPath: m_fontColor.a

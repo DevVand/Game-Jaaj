@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining = 350;
     public bool timerIsRunning = false;
+    public bool checkInput = true;
     public TextMeshProUGUI timeText; 
     private GameManager manager;
 
@@ -21,7 +22,8 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") > 0)
+        
+        if (checkInput && Input.GetAxis("Vertical") > 0)
             timerIsRunning = true;
 
         if (timerIsRunning)
