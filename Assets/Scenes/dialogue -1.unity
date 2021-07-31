@@ -312,17 +312,12 @@ PrefabInstance:
     - target: {fileID: 166375260637531840, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
       propertyPath: scene
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 166375260637531840, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
       propertyPath: nextScene
-      value: room 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 166375260637531840, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: totalDialogues
-      value: 3
+      value: room 0
       objectReference: {fileID: 0}
     - target: {fileID: 166375260637531842, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
@@ -439,40 +434,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2847407102008293971, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
+    - target: {fileID: 5473499378334341747, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
-      propertyPath: m_fontColor.a
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2847407102008293971, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105981771557735629, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105981771557735629, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5523017670128601390, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
+    - target: {fileID: 7777141934393566111, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7084080415483094072, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7084080415483094072, guid: 53ee51b08bde2e04bbdb76749ae3f27b,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53ee51b08bde2e04bbdb76749ae3f27b, type: 3}

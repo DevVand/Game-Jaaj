@@ -36,7 +36,7 @@ public class Dialogue : MonoBehaviour
     }
     public void playScene()
     {
-        anim.Play("scene" + scene);
+        //anim.Play("scene" + scene);
     }
     public void loadScene() {
         SceneManager.LoadScene(nextScene);

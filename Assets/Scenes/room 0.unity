@@ -1224,7 +1224,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f01a07c8a3c3734479dae4e44fac4282, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 135c64c54b2e6344fb64c314fe383961, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4422,6 +4422,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3836305292685407614, guid: dd825e2a1099a2e4ebd3669129c05b78,
+        type: 3}
+      propertyPath: m_text
+      value: 'the timer ran out!
+
+        and you didn''t clean enough'
       objectReference: {fileID: 0}
     - target: {fileID: 3836305293040038143, guid: dd825e2a1099a2e4ebd3669129c05b78,
         type: 3}
