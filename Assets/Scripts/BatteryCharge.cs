@@ -6,6 +6,7 @@ public class BatteryCharge : MonoBehaviour
 {
     public float smooth = 4;
     public bool spawnHere = false;
+    public float spawnAngle = 0;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class BatteryCharge : MonoBehaviour
             foreach (GameObject player in players)
             {
                 player.transform.position = transform.position;
+                player.GetComponent<playerMovement>().angle = -spawnAngle;
             } 
             
         }

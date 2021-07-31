@@ -100,7 +100,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -1.1890602, y: -1.4055891}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 1, z: 0, w: 1.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.125, y: 3.375}
     newSize: {x: 3.125, y: 3.375}
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 1.188, y: -1.4055891}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 1, z: 0, w: 1.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.125, y: 3.375}
     newSize: {x: 3.125, y: 3.375}
@@ -152,7 +152,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -1.1890602, y: 0.79}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 1, z: 0, w: 1.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.125, y: 3.375}
     newSize: {x: 3.125, y: 3.375}
@@ -178,7 +178,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 1.188, y: 0.79}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 1, z: 0, w: 1.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.125, y: 3.375}
     newSize: {x: 3.125, y: 3.375}

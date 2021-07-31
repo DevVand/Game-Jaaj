@@ -15,11 +15,15 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>(); ;
-        timerIsRunning = true;
+        DisplayTime(timeRemaining);
+        timerIsRunning = false;
     }
 
     void Update()
     {
+        if (Input.GetAxis("Vertical") > 0)
+            timerIsRunning = true;
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
