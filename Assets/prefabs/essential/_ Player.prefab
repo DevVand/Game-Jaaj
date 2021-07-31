@@ -1123,7 +1123,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: e72929ce740deb745811fbbafb268040, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &2533416322226902303
 CapsuleCollider2D:
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d785862c7b757b41899232daedee252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoveryRate: 1
+  recoveryRate: 0.8
 --- !u!114 &2533416322226902273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualCharge: 100
   maxCharge: 100
-  drainAmount: 10
+  drainAmount: 8
   chargeAmount: 30
   drainRate: 1
   chargeRate: 1
