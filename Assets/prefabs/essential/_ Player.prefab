@@ -1158,7 +1158,7 @@ MonoBehaviour:
   turnSpeed: 2.5
   damp: 0.9
   slowMode: 0
-  dashUnlocked: 1
+  dashUnlocked: 0
   dashSpeed: 100
   dashWait: 2
   dashStopWait: 0.5
