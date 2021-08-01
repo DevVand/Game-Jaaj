@@ -21,6 +21,7 @@ public class CarpetDust : MonoBehaviour
     {
         if (canInteract && Input.GetButtonDown("Use"))
         {
+            cleaner.playSFX(0);
             GameObject particle = Instantiate(particles);
             particle.transform.position = player.position;
             dirtness -= cleaner.cleanningKeyRate;

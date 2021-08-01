@@ -12,7 +12,7 @@ public class BackgroundMusic : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        if (GameObject.FindGameObjectsWithTag("BGMusic").Length > 1)
         {
             if (!original)
             {
