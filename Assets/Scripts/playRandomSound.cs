@@ -16,4 +16,8 @@ public class playRandomSound : MonoBehaviour
         
         source.PlayOneShot(sounds[Random.RandomRange(0, sounds.Length)], volume);
     }
+    public void play(int sfx)
+    {
+        source.PlayOneShot(sounds[sfx], volume);
+    }
 }

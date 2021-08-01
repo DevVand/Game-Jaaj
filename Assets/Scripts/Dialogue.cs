@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
+    BackgroundMusic BGMusic;
+
+    public bool endMusic = false;
     public int actualDialogue = 0;
     public int totalDialogues = 2;
     public int scene = 0;
@@ -14,6 +17,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] Animator animFade;
     void Start()
     {
+        BGMusic = GameObject.FindGameObjectWithTag("BGMusic").GetComponent<BackgroundMusic>();
         anim = GetComponent<Animator>();
         //Invoke(nameof(playScene), .5f);
     }
@@ -21,6 +25,9 @@ public class Dialogue : MonoBehaviour
     {
         if (actualDialogue >= totalDialogues)
         {
+            if (endMusic) {
+                BGMusic.on = false;
+            }
             animFade.SetBool("fade", false);
             Invoke(nameof(loadScene), 1.5f);
             return;
@@ -40,6 +47,9 @@ public class Dialogue : MonoBehaviour
     }
     public void loadScene() {
         SceneManager.LoadScene(nextScene);
+    }
+    public void turnMusicOn() {
+        BGMusic.on = true;
     }
 
 }

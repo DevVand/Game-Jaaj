@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dust
   - Tutorial
+  - Pause
+  - BGMusic
   layers:
   - Default
   - TransparentFX

@@ -1026,8 +1026,8 @@ GameObject:
   - component: {fileID: 2533416322226902272}
   - component: {fileID: 2533416322226902275}
   - component: {fileID: 2533416322226902274}
-  - component: {fileID: 7158880178035847516}
   - component: {fileID: 963066849495019163}
+  - component: {fileID: 7158880178035847516}
   m_Layer: 0
   m_Name: _ Player
   m_TagString: Player
@@ -1266,6 +1266,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallet: 0
+--- !u!114 &963066849495019163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2533416322226902297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9aec3ae28fa9048bc0f0db9a621118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 24100000, guid: 976a38a2922bd83438e023012d48050e, type: 2}
+  snapshotsOn: {fileID: 24500006, guid: 976a38a2922bd83438e023012d48050e, type: 2}
+  snapshotsOff: {fileID: -7571266599437384593, guid: 976a38a2922bd83438e023012d48050e,
+    type: 2}
 --- !u!82 &7158880178035847516
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1363,22 +1379,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &963066849495019163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2533416322226902297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b9aec3ae28fa9048bc0f0db9a621118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect: {fileID: 24100000, guid: 976a38a2922bd83438e023012d48050e, type: 2}
-  snapshotsOn: {fileID: 24500006, guid: 976a38a2922bd83438e023012d48050e, type: 2}
-  snapshotsOff: {fileID: -7571266599437384593, guid: 976a38a2922bd83438e023012d48050e,
-    type: 2}
 --- !u!1 &2533416322338240348
 GameObject:
   m_ObjectHideFlags: 0

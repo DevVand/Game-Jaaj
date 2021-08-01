@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     playRandomSound rndSound;
+    BackgroundMusic BGMusic;
     GameObject player;
 
     public string nextScene;
@@ -32,15 +33,20 @@ public class GameManager : MonoBehaviour
     float percentageOfOne = 0;
     float percentage = 0;
     Grades grades;
-    
+
     void Start()
     {
+        BGMusic = GameObject.FindGameObjectWithTag("BGMusic").GetComponent<BackgroundMusic>();
+
         rndSound = GetComponent<playRandomSound>();
         player = GameObject.FindGameObjectWithTag("Player");
         player.transform.Find("Cleaner").gameObject.GetComponent<Cleaner>().start();
         player.GetComponent<playerMovement>().enabled = true;
         player.GetComponent<playerManager>().enableCollider();
         player.GetComponent<Battery>().actualCharge = player.GetComponent<Battery>().maxCharge;
+
+        player.GetComponent<playerSound>().Invoke("soundOn",.2f);
+        //player.GetComponent<playerSound>().soundOn();
 
         grades = GetComponent<Grades>();
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Dust");
@@ -49,7 +55,6 @@ public class GameManager : MonoBehaviour
             dirts++;
         }
         percentageOfOne = 1 * 100 / dirts;
-        player.GetComponent<playerSound>().soundOn();
     }
 
     private void Update()
@@ -144,4 +149,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void turnMusicOff()
+    {
+        BGMusic.on = false;
+    }
 }

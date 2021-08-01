@@ -6,7 +6,7 @@ public class playerManager : MonoBehaviour
 {
     public bool original = false;
     private GameObject player;
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(this);
         if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
@@ -16,7 +16,8 @@ public class playerManager : MonoBehaviour
                 DestroyImmediate(this.gameObject, true); ;
             }
         }
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        player = this.gameObject;
         original = true;
     }
 

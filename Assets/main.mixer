@@ -32,7 +32,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     0d2d1a28e4e0a7b4ab57da73b7e56560: -80
     a849e06961bacff4390db3f19c857ebc: 1
-    cd75713da0099f44aa96d5a9d9911a98: 0.5
+    cd75713da0099f44aa96d5a9d9911a98: 1
   m_TransitionOverrides: {}
 --- !u!244 &-6733720441208510339
 AudioMixerEffectController:
@@ -87,6 +87,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 5bdfbe9ca9543644bb683ddf74011891
+    name: volume
   - guid: cd75713da0099f44aa96d5a9d9911a98
     name: pitch
   m_AudioMixerGroupViews:
@@ -96,7 +98,7 @@ AudioMixerController:
     - a8cb270981ca8f9439a3fdac9ad0df8b
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -7571266599437384593}
+  m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -142,7 +144,8 @@ AudioMixerSnapshotController:
   m_SnapshotID: 3926b5e55140d4144a22fa3ec3d42b68
   m_FloatValues:
     a849e06961bacff4390db3f19c857ebc: 1
-    cd75713da0099f44aa96d5a9d9911a98: 0.5
+    5bdfbe9ca9543644bb683ddf74011891: 0
+    cd75713da0099f44aa96d5a9d9911a98: 1
   m_TransitionOverrides: {}
 --- !u!244 &1760150969157933147
 AudioMixerEffectController:
