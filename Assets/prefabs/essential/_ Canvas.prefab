@@ -414,7 +414,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'the timer ran out!
 
-    and you didn''t clean enought'
+    and you didn''t clean enough'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca9166b44d766b14d9ef680baa3deca2, type: 2}
   m_sharedMaterial: {fileID: 6816404384722039386, guid: ca9166b44d766b14d9ef680baa3deca2,

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Dialogue : MonoBehaviour
 {
     BackgroundMusic BGMusic;
-
+    public bool destroyPlayer = false;
     public bool endMusic = false;
     public int actualDialogue = 0;
     public int totalDialogues = 2;
@@ -17,6 +17,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] Animator animFade;
     void Start()
     {
+        if (destroyPlayer)
+            DestroyImmediate(GameObject.FindGameObjectWithTag("Player"),true);
         BGMusic = GameObject.FindGameObjectWithTag("BGMusic").GetComponent<BackgroundMusic>();
         anim = GetComponent<Animator>();
         //Invoke(nameof(playScene), .5f);
